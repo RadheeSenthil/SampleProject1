@@ -38,6 +38,7 @@ import PDP from './app/PDP/components/PDP';
 import PLP from './app/PLP/components/PLP';
 import Counter from './app/counter/components/Counter';
 import BasicMMYYPage from './app/basicMonthYear/components/BasicMMYYPage';
+import AdvMMYYPage from './app/advMonthYear/components/AdvMMYYPage';
 
 
 import { NavRoutes } from './app/common/constants';
@@ -111,6 +112,7 @@ const App = () => {
         <NavStack.Screen name={NavRoutes.PDP_NAME} component={PDP} />
         <NavStack.Screen name={NavRoutes.COUNTER_NAME} component={Counter} />
         <NavStack.Screen name={NavRoutes.BASICMMYY_NAME} component={BasicMMYYPage} />
+        <NavStack.Screen name={NavRoutes.ADVMMYY_NAME} component={AdvMMYYPage} />
 
       </NavStack.Navigator>
     </NavigationContainer>
