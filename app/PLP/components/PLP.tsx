@@ -2,11 +2,12 @@ import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 import NavButton from "../../common/components/NavButton";
+import { NavRoutes } from "../../common/constants";
 
 const PLP = ({navigation}) => {
 
     function gotoPDP() {
-        navigation.navigate("PDP")
+        navigation.navigate(NavRoutes.PDP_NAME)
     }
 
     return(

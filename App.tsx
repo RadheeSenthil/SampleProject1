@@ -37,6 +37,8 @@ import SettingsPage from './app/Settings/components/SettingsPage';
 import PDP from './app/PDP/components/PDP';
 import PLP from './app/PLP/components/PLP';
 
+import { NavRoutes } from './app/common/constants';
+
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -79,9 +81,9 @@ const HomeTab = () => {
 
     <NavTab.Navigator>
 
-      <NavTab.Screen name='HomePage' component={HomePage} />
-      <NavTab.Screen name='WishListPage' component={WishListPage} />
-      <NavTab.Screen name='SettingsPage' component={SettingsPage} />
+      <NavTab.Screen name={NavRoutes.HOME_NAME} component={HomePage} />
+      <NavTab.Screen name={NavRoutes.WISHLIST_NAME} component={WishListPage} />
+      <NavTab.Screen name={NavRoutes.SETTINGS_NAME} component={SettingsPage} />
 
     </NavTab.Navigator>
   );
@@ -101,9 +103,9 @@ const App = () => {
     <NavigationContainer>
       <NavStack.Navigator>
 
-        <NavStack.Screen name='HomeTab' component={HomeTab}  options={{ headerShown: false }} />
-        <NavStack.Screen name='PLP' component={PLP} />
-        <NavStack.Screen name='PDP' component={PDP} />
+        <NavStack.Screen name={NavRoutes.HOMETAB_NAME} component={HomeTab}  options={{ headerShown: false }} />
+        <NavStack.Screen name={NavRoutes.PLP_NAME} component={PLP} />
+        <NavStack.Screen name={NavRoutes.PDP_NAME} component={PDP} />
 
       </NavStack.Navigator>
     </NavigationContainer>
