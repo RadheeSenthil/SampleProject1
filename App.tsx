@@ -36,6 +36,7 @@ import WishListPage from './app/WishList/components/WishListPage';
 import SettingsPage from './app/Settings/components/SettingsPage';
 import PDP from './app/PDP/components/PDP';
 import PLP from './app/PLP/components/PLP';
+import Counter from './app/counter/components/Counter';
 
 import { NavRoutes } from './app/common/constants';
 
@@ -106,6 +107,7 @@ const App = () => {
         <NavStack.Screen name={NavRoutes.HOMETAB_NAME} component={HomeTab}  options={{ headerShown: false }} />
         <NavStack.Screen name={NavRoutes.PLP_NAME} component={PLP} />
         <NavStack.Screen name={NavRoutes.PDP_NAME} component={PDP} />
+        <NavStack.Screen name={NavRoutes.COUNTER_NAME} component={Counter} />
 
       </NavStack.Navigator>
     </NavigationContainer>

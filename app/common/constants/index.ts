@@ -5,6 +5,7 @@ interface routesType {
     SETTINGS_NAME : string
     PLP_NAME : string
     PDP_NAME :string
+    COUNTER_NAME : string
 
 
 }
@@ -16,7 +17,8 @@ const NavRoutes : routesType =  {
     WISHLIST_NAME : "WishListPage",
     SETTINGS_NAME: "SettingsPage",
     PLP_NAME : "PLP",
-    PDP_NAME : "PDP"
+    PDP_NAME : "PDP",
+    COUNTER_NAME : "CounterPage"
 
 
 }
