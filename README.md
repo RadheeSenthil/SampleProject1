@@ -48,3 +48,19 @@ Added Stack Navigation in App Component
 
       </NavStack.Navigator>
     </NavigationContainer>
+
+TypeScript - Prop Type for Functional Component
+
+interface NavButtonProps {
+    title: string
+}
+
+const NavButton = (props: NavButtonProps) => {
+    return(
+        <View>
+            <Text style={styles.buttonStyle}>
+                {props.title}
+            </Text>
+        </View>
+    );
+}

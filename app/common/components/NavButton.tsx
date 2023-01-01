@@ -1,7 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const NavButton = (props) => {
+interface NavButtonProps {
+    title: string
+}
+
+const NavButton = (props: NavButtonProps) => {
     return(
         <View>
             <Text style={styles.buttonStyle}>
