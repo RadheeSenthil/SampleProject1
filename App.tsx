@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {type PropsWithChildren} from 'react';
+import React, { type PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -27,11 +27,22 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+import HomePage from './app/Home/components/HomePage';
+import WishListPage from './app/WishList/components/WishListPage';
+import SettingsPage from './app/Settings/components/SettingsPage';
+import PDP from './app/PDP/components/PDP';
+import PLP from './app/PLP/components/PLP';
+
+
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
   }>
-> = ({children, title}) => {
+> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -57,6 +68,28 @@ const Section: React.FC<
   );
 };
 
+
+
+const NavStack = createNativeStackNavigator();
+const NavTab = createBottomTabNavigator();
+
+
+const HomeTab = () => {
+  return (
+
+    <NavTab.Navigator>
+
+      <NavTab.Screen name='HomePage' component={HomePage} />
+      <NavTab.Screen name='WishListPage' component={WishListPage} />
+      <NavTab.Screen name='SettingsPage' component={SettingsPage} />
+
+    </NavTab.Navigator>
+  );
+
+}
+
+
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -64,37 +97,16 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+  return(
+    <NavigationContainer>
+      <NavStack.Navigator>
+
+        <NavStack.Screen name='HomeTab' component={HomeTab}  options={{ headerShown: false }} />
+        <NavStack.Screen name='PLP' component={PLP} />
+        <NavStack.Screen name='PDP' component={PDP} />
+
+      </NavStack.Navigator>
+    </NavigationContainer>
   );
 };
 
