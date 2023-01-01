@@ -22,4 +22,4 @@ const AdvYearCounter = (props: PropsYearAdv) => {
     );
 }
 
-export default AdvYearCounter;
+export default  React.memo(AdvYearCounter) ;

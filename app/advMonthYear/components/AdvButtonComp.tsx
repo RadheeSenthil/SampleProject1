@@ -9,9 +9,9 @@ interface PropsButtonAdv {
 const AdvButtonComp = (props: PropsButtonAdv) => {
 
     useEffect(() => {
-        console.log(props.buttonTitle + "- Adv Init +++")
+        console.log("Button - " + props.buttonTitle + "- Adv Init +++")
         return (() => {
-            console.log(props.buttonTitle + "- Adv DeInit ---")
+            console.log("Button - " + props.buttonTitle + "- Adv DeInit ---")
         })
     });
 
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default AdvButtonComp;
+export default React.memo(AdvButtonComp) ;

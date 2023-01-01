@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, SafeAreaView, Text, Button, StyleSheet } from "react-native";
 
 
@@ -19,39 +19,63 @@ const AdvMMYYPage = () => {
         })
     });
 
-    const increaseMonth = () => {
+    const increaseMonthCB = useCallback(()=>{
         if (month < 12) {
-
             setMonth(month + 1)
-
         }
+    },[month])
 
+    // const increaseMonth = () => {
+    //     if (month < 12) {
 
+    //         setMonth(month + 1)
 
+    //     }
+    // }
 
-    }
-
-    const decreaseMonth = () => {
+    const decreaseMonthCB = useCallback(()=>{
         if (month > 1) {
 
             setMonth(month - 1)
 
         }
-    }
+    },[month])
 
-    const increaseYear = () => {
+    // const decreaseMonth = () => {
+    //     if (month > 1) {
+
+    //         setMonth(month - 1)
+
+    //     }
+    // }
+
+    const increaseYearCB = useCallback(()=>{
         if (year < 2022) {
             setYear(year + 1)
 
         }
-    }
+    },[year])
 
-    const decreaseYear = () => {
-        if (year > 1990) {
-            setYear(year - 1)
 
-        }
-    }
+    // const increaseYear = () => {
+    //     if (year < 2022) {
+    //         setYear(year + 1)
+
+    //     }
+    // }
+
+    const decreaseYearCB = useCallback(()=>{if (year > 1990) {
+        setYear(year - 1)
+
+    }},[year])
+
+
+    // const decreaseYear = () => {
+    //     if (year > 1990) {
+    //         setYear(year - 1)
+
+    //     }
+    // }
 
 
     return (
@@ -59,15 +83,15 @@ const AdvMMYYPage = () => {
             <Text>Basic Month Year</Text>
 
             <Text>Month</Text>
-            <AdvButtonComp buttonTitle={"Dec. Month"} buttonEvent={decreaseMonth} />
+            <AdvButtonComp buttonTitle={"Dec. Month"} buttonEvent={decreaseMonthCB} />
             <AdvMonthCounter monthValue={month} />
-            <AdvButtonComp buttonTitle={"Inc. Month"} buttonEvent={increaseMonth} />
+            <AdvButtonComp buttonTitle={"Inc. Month"} buttonEvent={increaseMonthCB} />
 
 
             <Text>Year</Text>
-            <AdvButtonComp buttonTitle={"Dec. Year"} buttonEvent={decreaseYear} />
+            <AdvButtonComp buttonTitle={"Dec. Year"} buttonEvent={decreaseYearCB} />
             <AdvYearCounter yearValue={year} />
-            <AdvButtonComp buttonTitle={"Inc. Year"} buttonEvent={increaseYear} />
+            <AdvButtonComp buttonTitle={"Inc. Year"} buttonEvent={increaseYearCB} />
 
             <View style={styles.resultView} >
                 <Text>OutPut</Text>
@@ -87,4 +111,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AdvMMYYPage;
+export default React.memo(AdvMMYYPage) ;

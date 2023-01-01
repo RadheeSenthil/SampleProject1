@@ -23,4 +23,4 @@ const AdvMonthYearCounter = (props: PropsMonthYearAdv) => {
     );
 }
 
-export default AdvMonthYearCounter;
+export default React.memo(AdvMonthYearCounter) ;
