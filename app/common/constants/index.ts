@@ -6,6 +6,8 @@ interface routesType {
     PLP_NAME : string
     PDP_NAME :string
     COUNTER_NAME : string
+    BASICMMYY_NAME : string
+    ADVMMYY_NAME : string
 
 
 }
@@ -18,7 +20,9 @@ const NavRoutes : routesType =  {
     SETTINGS_NAME: "SettingsPage",
     PLP_NAME : "PLP",
     PDP_NAME : "PDP",
-    COUNTER_NAME : "CounterPage"
+    COUNTER_NAME : "CounterPage",
+    BASICMMYY_NAME : "BasicMMYYPage",
+    ADVMMYY_NAME : "AdvMMYYPage"
 
 
 }

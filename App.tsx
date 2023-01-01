@@ -37,6 +37,8 @@ import SettingsPage from './app/Settings/components/SettingsPage';
 import PDP from './app/PDP/components/PDP';
 import PLP from './app/PLP/components/PLP';
 import Counter from './app/counter/components/Counter';
+import BasicMMYYPage from './app/basicMonthYear/components/BasicMMYYPage';
+
 
 import { NavRoutes } from './app/common/constants';
 
@@ -108,6 +110,7 @@ const App = () => {
         <NavStack.Screen name={NavRoutes.PLP_NAME} component={PLP} />
         <NavStack.Screen name={NavRoutes.PDP_NAME} component={PDP} />
         <NavStack.Screen name={NavRoutes.COUNTER_NAME} component={Counter} />
+        <NavStack.Screen name={NavRoutes.BASICMMYY_NAME} component={BasicMMYYPage} />
 
       </NavStack.Navigator>
     </NavigationContainer>

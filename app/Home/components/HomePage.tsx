@@ -14,6 +14,10 @@ const HomePage = ({navigation}) => {
             navigation.navigate(NavRoutes.COUNTER_NAME)
         }
 
+        function gotoBasicMMYY() {
+            navigation.navigate(NavRoutes.BASICMMYY_NAME)
+        }
+
     return(
         <SafeAreaView>
             <Text>Home Page</Text>
@@ -26,6 +30,11 @@ const HomePage = ({navigation}) => {
                 <TouchableOpacity onPress={gotoCounter} >
                 <NavButton title="GOTO COUNTERPAGE"/>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={gotoBasicMMYY} >
+                <NavButton title="GOTO BASIC MONTHYEAR"/>
+                </TouchableOpacity>
+
 
         </SafeAreaView>
     );
