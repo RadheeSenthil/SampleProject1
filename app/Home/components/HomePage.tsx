@@ -1,6 +1,8 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
+import NavButton from "../../common/components/NavButton";
+
 const HomePage = ({navigation}) => {
 
         function gotoPLP() {
@@ -12,7 +14,7 @@ const HomePage = ({navigation}) => {
             <Text>Home Page</Text>
 
             <TouchableOpacity onPress={gotoPLP} >
-                <Text style={{fontWeight: 'bold', fontSize: 18}}>GOTO PLP</Text>
+                <NavButton title="GOTO PLP"/>
                 </TouchableOpacity>
 
         </SafeAreaView>

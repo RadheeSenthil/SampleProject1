@@ -1,6 +1,8 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
+import NavButton from "../../common/components/NavButton";
+
 const PLP = ({navigation}) => {
 
     function gotoPDP() {
@@ -12,7 +14,7 @@ const PLP = ({navigation}) => {
             <Text>PLP Screen</Text>
 
             <TouchableOpacity onPress={gotoPDP} >
-                <Text style={{fontWeight: 'bold', fontSize: 18}}>GOTO PDP</Text>
+                <NavButton title="GOTO PDP"/>
                 </TouchableOpacity>
 
         </SafeAreaView>
