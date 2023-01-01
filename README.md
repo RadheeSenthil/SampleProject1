@@ -39,7 +39,7 @@ const HomeTab = () => {
 
 Added Stack Navigation in App Component
 
- <NavigationContainer>
+  <NavigationContainer>
       <NavStack.Navigator>
 
         <NavStack.Screen name='HomeTab' component={HomeTab}  options={{ headerShown: false }} />
